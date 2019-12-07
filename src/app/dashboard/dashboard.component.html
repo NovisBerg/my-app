@@ -1,0 +1,17 @@
+<h3>阵营</h3>
+
+<nz-list [nzDataSource]="factions" [nzRenderItem]="item" [nzGrid]="{ gutter: 16, xs: 24, sm: 12, md: 6, lg: 6, xl: 4 }">
+  <ng-template #item let-item>
+    <nz-list-item [nzContent]="nzContent">
+      <ng-template #nzContent>
+        <a routerLink="/detail/{{item.id}}">
+          <nz-card [nzTitle]="item.name">
+            Content
+          </nz-card>
+        </a>
+      </ng-template>
+    </nz-list-item>
+  </ng-template>
+</nz-list>
+
+
