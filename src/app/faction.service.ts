@@ -1,10 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 import { Faction } from './faction';
-// import { FACTIONS } from './mock-factions';
 import { MessageService } from './messages.service';
 
 @Injectable({
@@ -24,6 +22,7 @@ export class FactionService {
   //   return of(FACTIONS);
   // }
   getFactions(): Observable<Faction[]> {
+    this.messageService.add('FactionService: fetched factions');
     return this.httpClient.get<Faction[]>(`${this.PHP_API_SERVER}/readFactions.php`);
   }
 

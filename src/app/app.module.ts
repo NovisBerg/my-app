@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FactionsComponent } from './factions/factions.component';
+import { CardsComponent } from './cards/cards.component';
 import { FactionDetailComponent } from './faction-detail/faction-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -22,7 +22,7 @@ import {
 @NgModule({
   declarations: [
     AppComponent,
-    FactionsComponent,
+    CardsComponent,
     FactionDetailComponent,
     MessagesComponent,
     DashboardComponent
