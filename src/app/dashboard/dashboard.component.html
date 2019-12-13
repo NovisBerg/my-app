@@ -5,8 +5,8 @@
     <nz-list-item [nzContent]="nzContent">
       <ng-template #nzContent>
         <a routerLink="/detail/{{item.id}}">
-          <nz-card [nzTitle]="item.name">
-            Content
+          <nz-card [nzTitle]="item.ename">
+            {{item.name}}
           </nz-card>
         </a>
       </ng-template>

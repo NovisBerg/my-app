@@ -19,7 +19,7 @@ export class DashboardComponent implements OnInit {
   }
 
   getFactions(): void {
-    this.factionService.getFactions().subscribe(factions => this.factions = factions)
+    this.factionService.getFactions().subscribe(factions => this.factions = factions);
   }
 
 }
