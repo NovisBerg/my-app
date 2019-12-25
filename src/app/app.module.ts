@@ -12,11 +12,12 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import {
   NzButtonModule,
   NzCardModule,
-  NzDescriptionsModule,
+  NzDescriptionsModule, NzIconModule,
   NzListModule,
-  NzMenuModule,
+  NzMenuModule, NzPaginationModule, NzSkeletonModule,
   NzTypographyModule
 } from 'ng-zorro-antd';
+import {ScrollingModule} from '@angular/cdk/scrolling';
 
 
 @NgModule({
@@ -38,6 +39,10 @@ import {
     NzCardModule,
     NzTypographyModule,
     NzDescriptionsModule,
+    NzIconModule,
+    NzSkeletonModule,
+    ScrollingModule,
+    NzPaginationModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
