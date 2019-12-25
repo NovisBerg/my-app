@@ -15,9 +15,13 @@ export class CardService {
     private httpClient: HttpClient
   ) { }
 
-  getCards(): Observable<Card[]> {
+  getCardsTotal(): Observable<number> {
+    this.messageService.add('CardService: Total number of cards obtained');
+    return this.httpClient.get<number>(`${this.PHP_API_SERVER}/getCardsTotal.php`);
+}
+  getCards(page, pageSize): Observable<Card[]> {
     this.messageService.add('CardService: fetched cards');
-    return this.httpClient.get<Card[]>(`${this.PHP_API_SERVER}/readCards.php?start=1&end=20`);
+    return this.httpClient.get<Card[]>(`${this.PHP_API_SERVER}/readCards.php?page=${page}&pageSize=${pageSize}`);
   }
 
 

@@ -1,4 +1,4 @@
-<h2>阵营</h2>
+<h2>牌库</h2>
 <ul class="cards">
   <li *ngFor="let card of cards">
     <a routerLink="/detail/{{card.card_id}}">
@@ -6,3 +6,13 @@
     </a>
   </li>
 </ul>
+
+<nz-pagination
+  [(nzPageIndex)]="current"
+  [(nzPageSize)]="pageSize"
+  [nzTotal]="total"
+  [nzSize]="'small'"
+  nzShowQuickJumper
+  (nzPageIndexChange)="changePageIndex($event)"
+></nz-pagination>
+<br/>
