@@ -12,7 +12,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import {
   NzButtonModule,
   NzCardModule,
-  NzDescriptionsModule, NzIconModule,
+  NzDescriptionsModule, NzGridModule, NzIconModule,
   NzListModule,
   NzMenuModule, NzPaginationModule, NzSkeletonModule,
   NzTypographyModule
@@ -43,6 +43,7 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
     NzSkeletonModule,
     ScrollingModule,
     NzPaginationModule,
+    NzGridModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

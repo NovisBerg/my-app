@@ -13,7 +13,7 @@ export class CardsComponent implements OnInit {
   cards: Card[];
   total: number;
   current = 1;
-  pageSize = 20;
+  pageSize = 10;
   constructor(
     private cardService: CardService,
     private messageService: MessageService
@@ -36,4 +36,6 @@ export class CardsComponent implements OnInit {
     this.messageService.add('PageIndex changed.');
     this.getCards(index, this.pageSize);
   }
+
+
 }
