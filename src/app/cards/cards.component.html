@@ -1,58 +1,27 @@
 <h2>牌库</h2>
-<!--<ul class="cards">-->
-<!--  <li *ngFor="let card of cards">-->
-<!--    <a routerLink="/detail/{{card.card_id}}">-->
-<!--      <span class="badge">{{card.card_id}}</span> {{card.cname}}-->
-<!--    </a>-->
-<!--  </li>-->
-<!--</ul>-->
-
-<!--<div *ngFor="let card of cards">-->
-<!--  <nz-card nzHoverable style="width:240px" [nzCover]="coverTemplate">-->
-<!--    <nz-card-meta nzTitle="{{card.cname}}" nzDescription="{{card.attribute}}"></nz-card-meta>-->
-<!--  </nz-card>-->
-<!--  <ng-template #coverTemplate>-->
-<!--    <img alt="{{card.faction}}" src="{{card.img}}" />-->
-<!--  </ng-template>-->
-<!--</div>-->
 
 <div style="background: #ECECEC;padding:30px;">
-<!--  <div nz-row [nzGutter]="16" nzType="flex">-->
-<!--    <div *ngFor="let card of cards" nz-col [nzXs]="24" [nzSm]="12" [nzMd]="6" [nzLg]="6" [nzXl]="4">-->
-<!--      <nz-card nzHoverable [nzCover]="coverTemplate">-->
-<!--        <nz-card-meta nzTitle="{{card.cname}}" nzDescription="{{card.attribute}}"></nz-card-meta>-->
-<!--      </nz-card>-->
-<!--      <ng-template #coverTemplate>-->
-<!--        <img alt="{{card.faction}}" src="{{card.img}}" />-->
-<!--      </ng-template>-->
-<!--    </div>-->
-    <nz-list [nzDataSource]="cards" [nzRenderItem]="item" [nzGrid]="{ gutter: 16, xs: 24, sm: 12, md: 6, lg: 6, xl: 4 }">
-      <ng-template #item let-item>
-        <nz-list-item [nzContent]="nzContent" [nzNoFlex]="true">
-          <ng-template #nzContent>
-            <a routerLink="/detail/{{item.id}}">
-              <nz-card nzHoverable [nzCover]="coverTemplate">
-                <nz-card-meta nzTitle="{{item.cname}}" nzDescription="{{item.attribute}}"></nz-card-meta>
-              </nz-card>
-              <ng-template #coverTemplate>
-                <img alt="{{item.faction}}" src="{{item.img}}" />
-              </ng-template>
-            </a>
-          </ng-template>
-        </nz-list-item>
+  <div nz-row [nzGutter]="16" nzType="flex">
+    <div *ngFor="let card of cards" nz-col [nzXs]="24" [nzSm]="12" [nzMd]="6" [nzLg]="6" [nzXl]="4" style="height: 460px">
+      <nz-card nzHoverable [nzCover]="coverTemplate">
+        <nz-card-meta nzTitle="{{card.cname}}" nzDescription="{{card.attribute}}"></nz-card-meta>
+      </nz-card>
+      <ng-template #coverTemplate>
+        <img alt="{{card.faction}}" src="{{card.img}}" />
       </ng-template>
-    </nz-list>
-<!--  </div>-->
+    </div>
+  </div>
+  <nz-pagination
+    [(nzPageIndex)]="current"
+    [(nzPageSize)]="pageSize"
+    [nzTotal]="total"
+    [nzSize]="'small'"
+    nzShowQuickJumper
+    (nzPageIndexChange)="changePageIndex($event)"
+  ></nz-pagination>
 </div>
 
 
 
-<!--<nz-pagination-->
-<!--  [(nzPageIndex)]="current"-->
-<!--  [(nzPageSize)]="pageSize"-->
-<!--  [nzTotal]="total"-->
-<!--  [nzSize]="'small'"-->
-<!--  nzShowQuickJumper-->
-<!--  (nzPageIndexChange)="changePageIndex($event)"-->
-<!--&gt;</nz-pagination>-->
+
 <br/>

@@ -13,7 +13,7 @@ export class CardsComponent implements OnInit {
   cards: Card[];
   total: number;
   current = 1;
-  pageSize = 10;
+  pageSize = 18;
   constructor(
     private cardService: CardService,
     private messageService: MessageService
