@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 import { Card } from './card';
 import { MessageService } from './messages.service';
+import { catchError, map, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -25,5 +26,13 @@ export class CardService {
   }
 
 
+  /* GET cards whose name contains search term */
+  searchCards(term: string): Observable<Card[]> {
+    if (!term.trim()) {
+      // if not search term, return empty card array.
+      return of([]);
+    }
+    return this.httpClient.get<Card[]>(`${this.PHP_API_SERVER}/searchCards.php/?cname=${term}`);
+  }
 
 }

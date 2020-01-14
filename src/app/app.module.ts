@@ -18,6 +18,7 @@ import {
   NzTypographyModule
 } from 'ng-zorro-antd';
 import {ScrollingModule} from '@angular/cdk/scrolling';
+import { CardSearchComponent } from './card-search/card-search.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
     CardsComponent,
     FactionDetailComponent,
     MessagesComponent,
-    DashboardComponent
+    DashboardComponent,
+    CardSearchComponent
   ],
   imports: [
     BrowserModule,
